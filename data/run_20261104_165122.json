@@ -1,0 +1,79 @@
+{
+  "started": "2026-11-04T16:51:22",
+  "seed": 1616220340,
+  "minutes_requested": 30.0,
+  "scale": 1.0,
+  "convention": "shoulder 0 = link 1 straight up, elbow 0 = straight, same rotation sense for +",
+  "joints": [
+    {
+      "name": "shoulder",
+      "can_id": 1,
+      "sign": -1
+    },
+    {
+      "name": "elbow",
+      "can_id": 2,
+      "sign": 1
+    }
+  ],
+  "loop_hz": 200,
+  "kp": 20.0,
+  "kd": 0.5,
+  "gravity_feedforward": true,
+  "joint_limit_deg": 60,
+  "max_speed_deg_per_s": 90.0,
+  "max_accel_deg_per_s2": 300.0,
+  "acceleration": "measured dq differentiated live, smoothing 0.1",
+  "columns": [
+    "t_s",
+    "phase",
+    "shoulder_q_rad",
+    "shoulder_dq_rad_s",
+    "shoulder_ddq_rad_s2",
+    "shoulder_tau_nm",
+    "shoulder_mos_temp_c",
+    "shoulder_rotor_temp_c",
+    "shoulder_feedback_age_ms",
+    "elbow_q_rad",
+    "elbow_dq_rad_s",
+    "elbow_ddq_rad_s2",
+    "elbow_tau_nm",
+    "elbow_mos_temp_c",
+    "elbow_rotor_temp_c",
+    "elbow_feedback_age_ms",
+    "cmd_shoulder_q_rad",
+    "cmd_shoulder_dq_rad_s",
+    "cmd_shoulder_tau_ff_nm",
+    "cmd_elbow_q_rad",
+    "cmd_elbow_dq_rad_s",
+    "cmd_elbow_tau_ff_nm"
+  ],
+  "not_model_inputs": [
+    "phase",
+    "cmd_shoulder_q_rad",
+    "cmd_shoulder_dq_rad_s",
+    "cmd_shoulder_tau_ff_nm",
+    "cmd_elbow_q_rad",
+    "cmd_elbow_dq_rad_s",
+    "cmd_elbow_tau_ff_nm"
+  ],
+  "training_rows": "use phase == motion; settle, return and hold are the start and end of the run",
+  "ticks": 38857,
+  "late_ticks": 60,
+  "seconds": 194.30846150001162,
+  "achieved_hz": 199.97585128323234,
+  "stop_reason": "ctrl-c",
+  "link_counters": {
+    "tx_frames": 77728,
+    "tx_refresh": 4,
+    "tx_param": 2,
+    "rx_frames": 77728,
+    "rx_other": 0,
+    "rx_invalid": 0,
+    "rx_unknown_id": 0,
+    "rx_param_ignored": 0,
+    "resync_bytes": 0,
+    "write_timeouts": 0,
+    "write_errors": 0
+  }
+}
